@@ -1,0 +1,25 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/silent-winter/springcloud-config.git    # git仓库
+          # 搜索目录
+          search-paths:
+            - springcloud-config
+      # 读取分支
+      label: main
+
+eureka:
+  client:
+    # true表示将自己注册进Eureka Server
+    register-with-eureka: true
+    # true表示从Eureka Server抓取已有的注册信息
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka

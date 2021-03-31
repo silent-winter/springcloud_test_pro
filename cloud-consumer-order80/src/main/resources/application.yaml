@@ -1,0 +1,23 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumer-service
+  datasource:
+    username: root
+    password: xinzi15078372389
+    url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=utf8&severTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
